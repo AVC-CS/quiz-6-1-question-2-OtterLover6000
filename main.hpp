@@ -31,6 +31,7 @@ inline int writeFile(const string &fileName) {
 inline int readFile(const string &fileName) {
     ifstream inFile(fileName);
 
+    int totalSalary = 0;
     int id;
     int salary;
     string name;
@@ -39,8 +40,10 @@ inline int readFile(const string &fileName) {
     int count = 0;
     while (inFile >> id >> name >> department >> salary) {
         cout << id << " " << name << " " << department << " " << salary << endl;
-        count++;
+        totalSalary += salary;
     }
     inFile.close();
+
+    cout << "Total: " << totalSalary << " Average: " << (totalSalary / count) << endl;
     return count;
 }
