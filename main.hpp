@@ -41,6 +41,7 @@ inline int readFile(const string &fileName) {
     while (inFile >> id >> name >> department >> salary) {
         cout << id << " " << name << " " << department << " " << salary << endl;
         totalSalary += salary;
+        count++;
     }
     inFile.close();
 
